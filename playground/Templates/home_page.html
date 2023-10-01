@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expo beoordeling</title>
+</head>
+<body>
+<!--<img class="vista_logo" src="Images/Vista-large.png" alt="Vista Logo">-->
+    <h1 class="expo_titel">Expo beoordelingen</h1>
+    <form action="/results/" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <div>   
+            <label for="leerlingnummer">Leerlingnummer</label>
+            <input type="number" name="leerlingnummer" id="leerlingnummer" required>
+        </div>
+        <div><p>Beoordeel alle expo's met 1, 2 of 3</p></div>
+     <div><label for="expo_1">JesseBV</label>
+         <input type="number" min="1" max="3" id="expo_1"></div>
+     <div><label for="expo_2">Yvocomm</label>
+         <input type="number" min="1" max="3" id="expo_2"></div>
+     <div><label for="expo_3">JesseBV</label>
+         <input type="number" min="1" max="3" id="expo_3"></div>
+        <input type="submit" value="Versturen">
+    </form>
+</body>
+</html>
