@@ -10,17 +10,25 @@
     <form action="/results/" method="POST">
         {% csrf_token %}
         {{ form }}
-        <div>   
-            <label for="leerlingnummer">Leerlingnummer</label>
-            <input type="number" name="leerlingnummer" id="leerlingnummer" required>
-        </div>
-        <div><p>Beoordeel alle expo's met 1, 2 of 3</p></div>
-     <div><label for="expo_1">JesseBV</label>
-         <input type="number" min="1" max="3" id="expo_1"></div>
-     <div><label for="expo_2">Yvocomm</label>
-         <input type="number" min="1" max="3" id="expo_2"></div>
-     <div><label for="expo_3">JesseBV</label>
-         <input type="number" min="1" max="3" id="expo_3"></div>
+        <div>
+                <label for="leerlingnummer">Leerlingnummer</label>
+                <input type="text" name="leerlingnummer" id="leerlingnummer" maxlength="10" required>
+            </div>
+
+            <div>
+                <label for="jesse">Jesse</label>
+                <input type="text" name="jesse" id="jesse" maxlength="10">
+            </div>
+
+            <div>
+                <label for="yvocomm">Yvocomm</label>
+                <input type="text" name="yvocomm" id="yvocomm" maxlength="10">
+            </div>
+
+            <div>
+                <label for="jessebv">JesseBV</label>
+                <input type="text" name="jessebv" id="jessebv" maxlength="10">
+            </div>
         <input type="submit" value="Versturen">
     </form>
 </body>
