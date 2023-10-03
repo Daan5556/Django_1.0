@@ -2,45 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expo Rating</title>
+
+    <style>
+   #leerlingnummer {width: fit-content}
+        input {width: fit-content;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;}
+   #submit-button {width: fit-content;
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;}
+   #header {
+        padding: 8px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+        font-size: 30px;
+   }
+
+    </style>
 </head>
 <body>
-<h1 id="title">Expo Rating</h1>
+<div id="header">
+    <h1 id="title">Expo Rating</h1>
+</div>
+
 <form action="/resultsblock2/" method="POST">
         {% csrf_token %}
         {{ form }}
         {{ form.errors }}
             <div>
                 <label for="leerlingnummer">Leerlingnummer</label>
-                <input type="number" name="leerlingnummer" id="leerlingnummer" min="100000" maxlength="6" required/>
+            </div>
+            <div>
+                <input type="number" name="leerlingnummer" id="leerlingnummer" min="10000" maxlength="6" required/>
             </div>
 
             <div>
                 <label for="avocado">Avocado</label>
+            </div>
+            <div>
                 <input type="number" name="avocado" id="avocado" min="1" max="3" required>
             </div>
 
             <div>
                 <label for="kiwi">Kiwi</label>
+            </div>
+            <div>
                 <input type="number" name="kiwi" id="kiwi" min="1" max="3" required>
             </div>
 
             <div>
                 <label for="mango">Mango</label>
+            </div>
+            <div>
                 <input type="number" name="mango" id="mango" min="1" max="3" required>
             </div>
 
             <div>
                 <label for="bloemkool">Bloemkool</label>
+            </div>
+            <div>
                 <input type="number" name="bloemkool" id="bloemkool" min="1" max="3" required>
             </div>
 
             <div>
                 <label for="aardbei">Aardbei</label>
+            </div>
+            <div>
                 <input type="number" name="aardbei" id="aardbei" min="1" max="3" required>
             </div>
 
-        <input type="submit" value="Versturen">
+        <input type="submit" value="Versturen" id="submit-button">
 </form>
 </body>
 </html>
