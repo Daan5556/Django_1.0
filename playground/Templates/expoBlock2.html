@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expo Rating</title>
+</head>
+<body>
+<h1 id="title">Food Rating</h1>
+<form action="/resultsblock2/" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        {{ form.errors }}
+            <div>
+                <label for="leerlingnummer">Leerlingnummer</label>
+                <input type="number" name="leerlingnummer" id="leerlingnummer" maxlength="10" required>
+            </div>
+
+            <div>
+                <label for="avocado">Avocado</label>
+                <input type="number" name="avocado" id="avocado" maxlength="1">
+            </div>
+
+            <div>
+                <label for="kiwi">Kiwi</label>
+                <input type="number" name="kiwi" id="kiwi" maxlength="1">
+            </div>
+
+            <div>
+                <label for="mango">Mango</label>
+                <input type="number" name="mango" id="mango" maxlength="1">
+            </div>
+
+            <div>
+                <label for="bloemkool">Bloemkool</label>
+                <input type="number" name="bloemkool" id="bloemkool" maxlength="1">
+            </div>
+
+            <div>
+                <label for="aardbei">Aardbei</label>
+                <input type="number" name="aardbei" id="aardbei" maxlength="1">
+            </div>
+
+        <input type="submit" value="Versturen">
+</form>
+</body>
+</html>

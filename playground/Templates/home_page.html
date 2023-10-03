@@ -2,34 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Expo beoordeling</title>
+    <title>Home</title>
 </head>
 <body>
-<!--<img class="vista_logo" src="Images/Vista-large.png" alt="Vista Logo">-->
-    <h1 class="expo_titel">Expo beoordelingen</h1>
-    <form action="/results/" method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <div>
-                <label for="leerlingnummer">Leerlingnummer</label>
-                <input type="text" name="leerlingnummer" id="leerlingnummer" maxlength="10" required>
-            </div>
-
-            <div>
-                <label for="jesse">Jesse</label>
-                <input type="text" name="jesse" id="jesse" maxlength="10">
-            </div>
-
-            <div>
-                <label for="yvocomm">Yvocomm</label>
-                <input type="text" name="yvocomm" id="yvocomm" maxlength="10">
-            </div>
-
-            <div>
-                <label for="jessebv">JesseBV</label>
-                <input type="text" name="jessebv" id="jessebv" maxlength="10">
-            </div>
-        <input type="submit" value="Versturen">
-    </form>
+<h2>Vista College</h2>
 </body>
 </html>
