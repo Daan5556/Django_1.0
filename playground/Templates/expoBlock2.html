@@ -5,39 +5,39 @@
     <title>Expo Rating</title>
 </head>
 <body>
-<h1 id="title">Food Rating</h1>
+<h1 id="title">Expo Rating</h1>
 <form action="/resultsblock2/" method="POST">
         {% csrf_token %}
         {{ form }}
         {{ form.errors }}
             <div>
                 <label for="leerlingnummer">Leerlingnummer</label>
-                <input type="number" name="leerlingnummer" id="leerlingnummer" maxlength="10" required>
+                <input type="number" name="leerlingnummer" id="leerlingnummer" min="100000" maxlength="6" required/>
             </div>
 
             <div>
                 <label for="avocado">Avocado</label>
-                <input type="number" name="avocado" id="avocado" maxlength="1">
+                <input type="number" name="avocado" id="avocado" min="1" max="3" required>
             </div>
 
             <div>
                 <label for="kiwi">Kiwi</label>
-                <input type="number" name="kiwi" id="kiwi" maxlength="1">
+                <input type="number" name="kiwi" id="kiwi" min="1" max="3" required>
             </div>
 
             <div>
                 <label for="mango">Mango</label>
-                <input type="number" name="mango" id="mango" maxlength="1">
+                <input type="number" name="mango" id="mango" min="1" max="3" required>
             </div>
 
             <div>
                 <label for="bloemkool">Bloemkool</label>
-                <input type="number" name="bloemkool" id="bloemkool" maxlength="1">
+                <input type="number" name="bloemkool" id="bloemkool" min="1" max="3" required>
             </div>
 
             <div>
                 <label for="aardbei">Aardbei</label>
-                <input type="number" name="aardbei" id="aardbei" maxlength="1">
+                <input type="number" name="aardbei" id="aardbei" min="1" max="3" required>
             </div>
 
         <input type="submit" value="Versturen">

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expo Rating</title>
+</head>
+<body>
+<h1 id="title">Expo Rating</h1>
+<form action="/resultsblock1/" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        {{ form.errors }}
+            <div>
+                <label for="leerlingnummer">Leerlingnummer</label>
+                <input type="number" name="leerlingnummer" id="leerlingnummer" min="100000" maxlength="6" required/>
+            </div>
+
+            <div>
+                <label for="spinazie">Spinazie</label>
+                <input type="number" name="spinazie" id="spinazie" min="1" max="3" required>
+            </div>
+
+            <div>
+                <label for="mozzarella">Mozzarella</label>
+                <input type="number" name="mozzarella" id="mozzarella" min="1" max="3" required>
+            </div>
+
+            <div>
+                <label for="spareribs">Spareribs</label>
+                <input type="number" name="spareribs" id="spareribs" min="1" max="3" required>
+            </div>
+
+            <div>
+                <label for="spaghetti">Spaghetti</label>
+                <input type="number" name="spaghetti" id="spaghetti" min="1" max="3" required>
+            </div>
+
+            <div>
+                <label for="noodles">Noodles</label>
+                <input type="number" name="noodles" id="noodles" min="1" max="3" required>
+            </div>
+
+            <div>
+                <label for="salami">Salami</label>
+                <input type="number" name="salami" id="salami" min="1" max="3" required>
+            </div>
+        <input type="submit" value="Versturen">
+</form>
+</body>
+</html>

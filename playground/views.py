@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
+from.forms import expoblock1form
 from.forms import expoblock2form
 
 def index(request):
@@ -24,6 +25,25 @@ def results(request):
     else:
         form = expo1Form()
         return render(request, "home_page.html", {"form": form})
+
+def resultsblock1(request):
+    if request.method == "POST":
+        form = expoblock1form(request.POST)
+        if form.is_valid():
+            entryList = ["leerlingnummer", "spinazie", "mozzarella", "spareribs", "spaghetti", "noodles", "salami"]
+            for i in entryList:
+                dataEntry = form.cleaned_data[i]
+                file = open("expoBlock1.txt", "a")
+                file.write(str("\n") + str(dataEntry))
+                file.close()
+
+
+            return HttpResponseRedirect("/thanks/")
+        return render(request, "expoBlock1.html", {"form": form})
+    else:
+        form = expoblock1form()
+        return render(request, "expoBlock1.html", {"form": form})
+
 
 def resultsblock2(request):
     if request.method == "POST":
