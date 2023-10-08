@@ -26,10 +26,22 @@ def results(request):
         form = expo1Form()
         return render(request, "home_page.html", {"form": form})
 
+def is_leerlingnummer_duplicate1(leerlingnummer):
+    # Read the existing file to check for duplicates
+    with open("expoBlock1.txt", "r") as file:
+        lines = file.readlines()
+        for line in lines:
+            if leerlingnummer in line:
+                return True
+    return False
+
 def resultsblock1(request):
     if request.method == "POST":
         form = expoblock1form(request.POST)
         if form.is_valid():
+            leerlingnummer = form.cleaned_data["leerlingnummer"]
+            if is_leerlingnummer_duplicate1(leerlingnummer):
+                return render(request, 'submission_error.html', {'message': 'You have already submitted the form.'})
             entryList = ["leerlingnummer", "spinazie", "mozzarella", "spareribs", "spaghetti", "noodles", "salami"]
             for i in entryList:
                 dataEntry = form.cleaned_data[i]
@@ -44,11 +56,22 @@ def resultsblock1(request):
         form = expoblock1form()
         return render(request, "expoBlock1.html", {"form": form})
 
+def is_leerlingnummer_duplicate2(leerlingnummer):
+    # Read the existing file to check for duplicates
+    with open("expoBlock2.txt", "r") as file:
+        lines = file.readlines()
+        for line in lines:
+            if leerlingnummer in line:
+                return True
+    return False
 
 def resultsblock2(request):
     if request.method == "POST":
         form = expoblock2form(request.POST)
         if form.is_valid():
+            leerlingnummer = form.cleaned_data["leerlingnummer"]
+            if is_leerlingnummer_duplicate2(leerlingnummer):
+                return render(request, 'submission_error.html', {'message': 'You have already submitted the form.'})
             entryList = ["leerlingnummer", "avocado", "kiwi", "mango", "bloemkool", "aardbei"]
             for i in entryList:
                 dataEntry = form.cleaned_data[i]
